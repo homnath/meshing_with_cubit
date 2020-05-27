@@ -1,0 +1,14 @@
+#!python
+#-----------------------------------------------
+#Hom Nath Gharti, Princeton University
+#March 13, 2016. Tested with Trelis 15.2
+#Three layered model
+#-----------------------------------------------
+cubit.cmd('reset')
+cubit.cmd('set node constraint on')
+cubit.cmd('brick x 200 y 160 z 100')
+cubit.cmd('move Volume 1 x 0 y 0 z -50 include_merged ')
+cubit.cmd('webcut body all with plane zplane offset -70 ')
+cubit.cmd('webcut body all with plane zplane offset -40 ')
+cubit.cmd('save as "layers_geometry.cub" overwrite journal ')
+

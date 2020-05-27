@@ -1,0 +1,63 @@
+#!python
+#-----------------------------------------------
+#Hom Nath Gharti, Princeton University
+#March 13, 2016. Tested with Trelis 15.2
+#Finie fault model
+#-----------------------------------------------
+cubit.cmd('reset')
+cubit.cmd('set node constraint on')
+cubit.cmd('brick x 200 y 160 z 100')
+cubit.cmd('move Volume 1 preview x 0 y 0 z -50 include_merged ')
+cubit.cmd('move Volume 1 x 0 y 0 z -50 include_merged ')
+cubit.cmd('webcut body 1  with plane zplane offset -60 ')
+cubit.cmd('create surface rectangle width 40 height 20 zplane ')
+cubit.cmd('move Surface 17  x 0 y 0 z -30 include_merged ')
+cubit.cmd('rotate Surface 17 angle 10  about Y include_merged ')
+cubit.cmd('compress all')
+cubit.cmd('subtract body 3  from body 1  ')
+cubit.cmd('compress all')
+cubit.cmd('save as "fault_geometry.cub" overwrite journal ')
+
+cubit.cmd('pause')
+
+cubit.cmd('webcut body 1  with plane normal to curve 25  fraction 0 from start ')
+cubit.cmd('webcut body 1  with plane normal to curve 25  fraction 1 from start ')
+cubit.cmd('webcut body 4  with plane normal to curve 28  fraction 0 from start ')
+cubit.cmd('webcut body 4  with plane normal to curve 28  fraction 1 from start ')
+cubit.cmd('webcut body 6  with plane from surface 13  ')
+cubit.cmd('imprint all')
+cubit.cmd('merge all')
+cubit.cmd('compress all')
+
+cubit.cmd('pause')
+
+cubit.cmd('unmerge surface 8')
+cubit.cmd('volume all size 5')
+cubit.cmd('volume all scheme Auto')
+cubit.cmd('mesh volume all')
+cubit.cmd('set node constraint of')
+cubit.cmd('node in surf 8 move X 0 Y 0.01 Z 0')
+cubit.cmd('node in surf 58 move X 0 Y -0.01 Z 0')
+
+cubit.cmd('pause')
+
+cubit.cmd('set duplicate block elements off')
+cubit.cmd('block 1 add volume 2 4 7 5 3 6  ')
+cubit.cmd('volume all visibility on')
+cubit.cmd('set duplicate block elements off')
+cubit.cmd('block 2 add volume 1  ')
+cubit.cmd('Sideset 1 add surface 15 26 36 21 12  ')
+cubit.cmd('sideset 1 name \'absorbing_surface_file_zmax\'')
+cubit.cmd('Sideset 2 add surface 1  ')
+cubit.cmd('sideset 2 name \'absorbing_surface_file_zmin\'')
+cubit.cmd('Sideset 3 add surface 2 6  ')
+cubit.cmd('sideset 3 name \'absorbing_surface_file_xmin\'')
+cubit.cmd('Sideset 4 add surface 3 4  ')
+cubit.cmd('sideset 4 name \'absorbing_surface_file_xmax\'')
+cubit.cmd('Sideset 5 add surface 14 18 9 5  ')
+cubit.cmd('sideset 5 name \'absorbing_surface_file_ymin\'')
+cubit.cmd('Sideset 6 add surface 16 17 11 7  ')
+cubit.cmd('sideset 6 name \'absorbing_surface_file_ymax\'')
+cubit.cmd('save as "fault_mesh.cub" overwrite journal ')
+cubit.cmd('set large exodus file on')
+cubit.cmd('export mesh "fault_mesh.e" dimension 3 overwrite ')

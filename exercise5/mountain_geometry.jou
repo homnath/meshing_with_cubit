@@ -1,0 +1,13 @@
+#!python
+#-----------------------------------------------
+#Hom Nath Gharti, Princeton University
+#March 13, 2016. Tested with Trelis 15.2
+#Mountain model
+#-----------------------------------------------
+cubit.cmd('reset')
+cubit.cmd('set node constraint on')
+cubit.cmd('import stl "mountain_topography.stl" merge stitch ')
+cubit.cmd('import stl "mountain_interface.stl" merge stitch ')
+cubit.cmd('compress all')
+cubit.cmd('save as "mountain_geometry.cub" overwrite journal ')
+

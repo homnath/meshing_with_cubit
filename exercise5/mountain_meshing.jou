@@ -1,0 +1,87 @@
+#!python
+#-----------------------------------------------
+#Hom Nath Gharti, Princeton University
+#March 13, 2016. Tested with Trelis 15.2
+#Mountain model
+#-----------------------------------------------
+cubit.cmd('reset')
+cubit.cmd('set node constraint on')
+cubit.cmd('import stl "mountain_topography.stl" merge stitch ')
+cubit.cmd('import stl "mountain_interface.stl" merge stitch ')
+cubit.cmd('surface 2  size 10')      
+cubit.cmd('surface 2  scheme map')    
+cubit.cmd('mesh surface 2 ')                                                    
+cubit.cmd('create surface net from mapped surface 2  heal ')
+cubit.cmd('surface 3  size 10')      
+cubit.cmd('surface 3  scheme map')    
+cubit.cmd('mesh surface 3 ')                                                    
+cubit.cmd('create surface net from mapped surface 3  heal ')                  
+cubit.cmd('delete Volume 1 2')    
+cubit.cmd('compress all')  
+
+cubit.cmd('pause')                    
+
+cubit.cmd('sweep surface 1  vector 0 0 -1  distance 700 ')
+
+cubit.cmd('pause')
+
+cubit.cmd('webcut body 1  with plane zplane offset -300 ')
+cubit.cmd('delete volume 3  ')
+cubit.cmd('compress all')
+cubit.cmd('pause')
+
+cubit.cmd('webcut body 1 with sheet body 2  ')
+cubit.cmd('delete Body 2')
+cubit.cmd('compress all')
+cubit.cmd('save as "mountain_geometry_webcut.cub" overwrite journal ')
+
+cubit.cmd('pause')
+
+cubit.cmd('imprint all')
+cubit.cmd('merge all')
+cubit.cmd('volume all size 20')
+
+cubit.cmd('surface 5  size 20')
+cubit.cmd('surface 5 scheme pave')
+cubit.cmd('mesh surface 5')
+cubit.cmd('volume 1  redistribute nodes off ')
+cubit.cmd('volume 1  scheme Sweep  source surface 5    target surface 7   sweep transform least squares ')
+cubit.cmd('volume 1  autosmooth target off ')
+cubit.cmd('mesh volume 1 ')
+
+cubit.cmd('surface 11  size 20')
+cubit.cmd('surface 11 scheme pave')
+cubit.cmd('surface 11 scheme pave')
+cubit.cmd('mesh surface 7')
+cubit.cmd('volume 2  redistribute nodes off ')
+cubit.cmd('volume 2  scheme Sweep  source surface 11    target surface 9   sweep transform least squares ')
+cubit.cmd('volume 2  autosmooth target off ')
+cubit.cmd('mesh volume 2 ')
+
+
+cubit.cmd('merge all')
+cubit.cmd('compress all')
+
+cubit.cmd('pause')
+
+cubit.cmd('set duplicate block elements off')
+cubit.cmd('block 1 add volume 1 ')
+cubit.cmd('set duplicate block elements off')
+cubit.cmd('block 2 add volume 2 ')
+cubit.cmd('Sideset 1 add surface 1 ')
+cubit.cmd('sideset 1 name \'absorbing_surface_file_zmax\'')
+cubit.cmd('Sideset 2 add surface 2 ')
+cubit.cmd('sideset 2 name \'absorbing_surface_file_zmin\'')
+cubit.cmd('Sideset 3 add surface 12 5 ')
+cubit.cmd('sideset 3 name \'absorbing_surface_file_xmin\'')
+cubit.cmd('Sideset 4 add surface 10 7 ')
+cubit.cmd('sideset 4 name \'absorbing_surface_file_xmax\'')
+cubit.cmd('Sideset 5 add surface 9 4 ')
+cubit.cmd('sideset 5 name \'absorbing_surface_file_ymin\'')
+cubit.cmd('Sideset 6 add surface 11 6 ')
+cubit.cmd('sideset 6 name \'absorbing_surface_file_ymax\'')
+
+cubit.cmd('compress all')
+cubit.cmd('save as "mountain_mesh.cub" overwrite journal ')
+cubit.cmd('set large exodus file on')
+cubit.cmd('export mesh "mountain_mesh.e" dimension 3 overwrite ')

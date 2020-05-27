@@ -1,0 +1,60 @@
+#!python
+#-----------------------------------------------
+#Hom Nath Gharti, Princeton University
+#March 13, 2016. Tested with Trelis 15.2
+#Laboratory scale cylindrical sample
+#-----------------------------------------------
+cubit.cmd('reset')
+cubit.cmd('set node constraint on')
+cubit.cmd('create Cylinder height 127 radius 25.4 ')
+cubit.cmd('create Cylinder height 60 radius 2.6 ')
+cubit.cmd('rotate Volume 2 angle 90  about X include_merged ')
+cubit.cmd('subtract body 2 from body 1 ')
+cubit.cmd('compress all')
+cubit.cmd('save as "cylinder.cub" overwrite journal ')
+
+cubit.cmd('pause')
+
+cubit.cmd('webcut body all with plane zplane offset 0 ')
+cubit.cmd('webcut body all with plane yplane offset 0 ')
+cubit.cmd('webcut body all with plane xplane offset 0 ')
+cubit.cmd('delete Volume 2 6 7 8 3 4 5')
+cubit.cmd('compress all')
+
+cubit.cmd('pause')
+
+cubit.cmd('volume 1 size 1.5')
+cubit.cmd('surface 6 1 size 1.5')
+cubit.cmd('surface 6 1 scheme pave')
+cubit.cmd('mesh surface 6 1')
+
+cubit.cmd('pause')
+
+cubit.cmd('volume 1  redistribute nodes off ')
+cubit.cmd('volume 1  scheme Sweep  source surface 1 6    target surface 4   sweep transform least squares ')
+cubit.cmd('volume 1  autosmooth target off ')
+cubit.cmd('mesh volume 1 ')
+
+cubit.cmd('pause')
+
+cubit.cmd('Volume 1  copy reflect x ')
+cubit.cmd('Volume 2 1  copy reflect y ')
+cubit.cmd('Volume 2 1 3 4  copy reflect z ')
+
+cubit.cmd('imprint all')
+cubit.cmd('merge all')
+cubit.cmd('compress all')
+
+cubit.cmd('pause')
+
+cubit.cmd('set duplicate block elements off')
+cubit.cmd('block 1 add volume all ')
+cubit.cmd('Sideset 1 add surface 13 17 4 8 ')
+cubit.cmd('sideset 1 name \'absorbing_surface_file_zmax\'')
+cubit.cmd('Sideset 2 add surface 34 31 23 27 ')
+cubit.cmd('sideset 2 name \'absorbing_surface_file_zmin\'')
+cubit.cmd('Sideset 3 add surface 14 32 9 24 5 28 18 35 ')
+cubit.cmd('sideset 3 name \'absorbing_surface_file_lateral\'')
+cubit.cmd('save as "cylinder_mesh.cub" overwrite journal ')
+cubit.cmd('set large exodus file on')
+cubit.cmd('export mesh "cylinder_mesh.e" dimension 3 overwrite ')

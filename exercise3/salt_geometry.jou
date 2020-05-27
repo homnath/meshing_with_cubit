@@ -1,0 +1,19 @@
+#!python
+#-----------------------------------------------
+#Hom Nath Gharti, Princeton University
+#March 13, 2016. Tested with Trelis 15.2
+#Salt model
+#-----------------------------------------------
+cubit.cmd('reset')
+cubit.cmd('set node constraint on')
+cubit.cmd('create surface ellipse major radius 300 minor radius 200 zplane ')
+cubit.cmd('webcut body 1 with plane yplane offset 0 ')
+cubit.cmd('sweep curve 5  xaxis angle 360 make_solid ')
+cubit.cmd('delete Body 1 2')
+cubit.cmd('compress all')
+cubit.cmd('brick x 1000 y 800 z 600')
+cubit.cmd('rotate Volume 1 angle 10  about Y ')
+cubit.cmd('subtract body 1 from body 2 keep ')
+cubit.cmd('delete Volume 2')
+cubit.cmd('compress all')
+cubit.cmd('save as "salt_geometry.cub" overwrite journal ')
