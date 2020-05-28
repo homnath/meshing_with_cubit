@@ -1,0 +1,59 @@
+reset
+create surface rectangle width 200 height 80 yplane 
+move Surface 1  x 0 y 0 z 40 include_merged preview 
+move Surface 1  x 0 y 0 z 40 include_merged preview 
+move Surface 1  x 0 y 0 z 40 include_merged 
+move Surface 1  x 100 y 0 z 40 include_merged 
+undo
+undo
+move Surface 1  x 100 y 0 z 40 include_merged preview 
+move Surface 1  x 100 y 0 z 40 include_merged 
+webcut body 1  with plane yplane offset 40 preview 
+webcut body 1  with plane yplane offset 40 preview 
+webcut body 1  with plane yplane offset 40 
+webcut body 1  with plane zplane offset 40 preview 
+webcut body 1  with plane zplane offset 40 
+compress all
+imprint all
+merge all
+surface 1 2  size 1.6
+surface 1 2 scheme pave
+surface 1 2 scheme pave
+mesh surface 1 2
+save trelis "C:/Users/homna/GEO441/Homework9/codes/hw9/mesh/homework9.trelis" overwrite journal
+compress all
+merge all
+set duplicate block elements off
+undo group begin
+block 1 add surface 1 
+block 1 name "Crust"
+undo group end
+set duplicate block elements off
+undo group begin
+block 2 add surface 2 
+block 2 name "Mantle"
+undo group end
+block all element type quad4
+undo group begin
+sideset 1 add curve 2  
+sideset 1 name "Free_Surface"
+undo group end
+undo group begin
+sideset 2 add curve 4 7 1 6 5  
+sideset 2 name "Free_Surface"
+undo group end
+undo group begin
+sideset 2 add curve 4 7 1 6 5  
+sideset 2 name "Absorbing_Surface"
+undo group end
+compress all
+merge all
+save trelis "C:/Users/homna/GEO441/FinalProject/mesh/homework9.trelis" overwrite journal
+undo group begin
+set exodus netcdf4 off
+set large exodus file on
+export mesh "C:/Users/homna/GEO441/FinalProject/mesh/Homework9.e"  dimension 3  overwrite 
+undo group end
+save trelis "C:/Users/homna/GEO441/FinalProject/mesh/homework9.trelis" overwrite journal
+
+

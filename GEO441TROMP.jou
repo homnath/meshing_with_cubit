@@ -1,0 +1,492 @@
+# This journal script generates the mesh for the GEO441-TROMP model literally.
+# Written by Hom Nath Gharti
+# April 25, 2020
+#===============================================
+# Reset everything on current window
+reset
+
+# Create vertices and line segments
+create vertex 1.041670 5.635040 0.000000
+create vertex 0.208333 5.635040 0.000000
+create curve vertex 1 2
+create vertex 0.208333 5.635040 0.000000
+create vertex 0.208333 4.593370 0.000000
+create curve vertex 3 4
+create vertex 0.208333 4.593370 0.000000
+create vertex 1.041670 4.593370 0.000000
+create curve vertex 5 6
+create vertex 1.041670 4.593370 0.000000
+create vertex 1.041670 5.218370 0.000000
+create curve vertex 7 8
+create vertex 1.041670 5.426710 0.000000
+create vertex 0.416667 5.426710 0.000000
+create curve vertex 9 10
+create vertex 0.416667 4.801710 0.000000
+create vertex 0.833333 4.801710 0.000000
+create curve vertex 11 12
+create vertex 0.833333 4.801710 0.000000
+create vertex 0.833333 5.010040 0.000000
+create curve vertex 13 14
+create vertex 0.416667 4.801710 0.000000
+create vertex 0.416667 5.426710 0.000000
+create curve vertex 15 16
+create vertex 1.041670 5.635040 0.000000
+create vertex 1.041670 5.426710 0.000000
+create curve vertex 17 18
+create vertex 1.041670 5.218370 0.000000
+create vertex 0.625000 5.218370 0.000000
+create curve vertex 19 20
+create vertex 0.833333 5.010040 0.000000
+create vertex 0.625000 5.010040 0.000000
+create curve vertex 21 22
+create vertex 0.625000 5.010040 0.000000
+create vertex 0.625000 5.218370 0.000000
+create curve vertex 23 24
+create vertex 1.250000 5.635040 0.000000
+create vertex 1.250000 4.593370 0.000000
+create curve vertex 25 26
+create vertex 2.083330 4.593370 0.000000
+create vertex 1.250000 4.593370 0.000000
+create curve vertex 27 28
+create vertex 2.083330 4.593370 0.000000
+create vertex 2.083330 4.801710 0.000000
+create curve vertex 29 30
+create vertex 1.458330 4.801710 0.000000
+create vertex 2.083330 4.801710 0.000000
+create curve vertex 31 32
+create vertex 1.250000 5.635040 0.000000
+create vertex 2.083330 5.635040 0.000000
+create curve vertex 33 34
+create vertex 2.083330 5.426710 0.000000
+create vertex 1.458330 5.426710 0.000000
+create curve vertex 35 36
+create vertex 1.458330 5.426710 0.000000
+create vertex 1.458330 5.218370 0.000000
+create curve vertex 37 38
+create vertex 2.083330 5.635040 0.000000
+create vertex 2.083330 5.426710 0.000000
+create curve vertex 39 40
+create vertex 1.458330 5.218370 0.000000
+create vertex 1.875000 5.218370 0.000000
+create curve vertex 41 42
+create vertex 1.875000 5.218370 0.000000
+create vertex 1.875000 5.010040 0.000000
+create curve vertex 43 44
+create vertex 1.875000 5.010040 0.000000
+create vertex 1.458330 5.010040 0.000000
+create curve vertex 45 46
+create vertex 1.458330 5.010040 0.000000
+create vertex 1.458330 4.801710 0.000000
+create curve vertex 47 48
+create vertex 2.291670 5.635040 0.000000
+create vertex 2.291670 4.593370 0.000000
+create curve vertex 49 50
+create vertex 2.291670 4.593370 0.000000
+create vertex 3.125000 4.593370 0.000000
+create curve vertex 51 52
+create vertex 3.125000 4.593370 0.000000
+create vertex 3.125000 5.635040 0.000000
+create curve vertex 53 54
+create vertex 3.125000 5.635040 0.000000
+create vertex 2.291670 5.635040 0.000000
+create curve vertex 55 56
+create vertex 2.916670 5.426710 0.000000
+create vertex 2.500000 5.426710 0.000000
+create curve vertex 57 58
+create vertex 2.500000 5.426710 0.000000
+create vertex 2.500000 4.801710 0.000000
+create curve vertex 59 60
+create vertex 2.500000 4.801710 0.000000
+create vertex 2.916670 4.801710 0.000000
+create curve vertex 61 62
+create vertex 2.916670 4.801710 0.000000
+create vertex 2.916670 5.426710 0.000000
+create curve vertex 63 64
+create vertex 3.750000 5.635040 0.000000
+create vertex 3.958330 5.635040 0.000000
+create curve vertex 65 66
+create vertex 3.958330 5.635040 0.000000
+create vertex 3.958330 5.010040 0.000000
+create curve vertex 67 68
+create vertex 3.958330 5.010040 0.000000
+create vertex 4.062500 5.010040 0.000000
+create curve vertex 69 70
+create vertex 4.062500 5.010040 0.000000
+create vertex 4.062500 4.801710 0.000000
+create curve vertex 71 72
+create vertex 4.062500 4.801710 0.000000
+create vertex 3.958330 4.801710 0.000000
+create curve vertex 73 74
+create vertex 3.958330 4.801710 0.000000
+create vertex 3.958330 4.593370 0.000000
+create curve vertex 75 76
+create vertex 3.958330 4.593370 0.000000
+create vertex 3.750000 4.593370 0.000000
+create curve vertex 77 78
+create vertex 3.750000 4.593370 0.000000
+create vertex 3.750000 4.801710 0.000000
+create curve vertex 79 80
+create vertex 3.750000 4.801710 0.000000
+create vertex 3.333330 4.801710 0.000000
+create curve vertex 81 82
+create vertex 3.333330 4.801710 0.000000
+create vertex 3.333330 5.010040 0.000000
+create curve vertex 83 84
+create vertex 3.333330 5.010040 0.000000
+create vertex 3.750000 5.635040 0.000000
+create curve vertex 85 86
+create vertex 3.541670 5.010040 0.000000
+create vertex 3.750000 5.010040 0.000000
+create curve vertex 87 88
+create vertex 3.750000 5.010040 0.000000
+create vertex 3.750000 5.322540 0.000000
+create curve vertex 89 90
+create vertex 3.750000 5.322540 0.000000
+create vertex 3.541670 5.010040 0.000000
+create curve vertex 91 92
+create vertex 4.687500 5.635100 0.000000
+create vertex 4.895830 5.635100 0.000000
+create curve vertex 93 94
+create vertex 4.895830 5.635100 0.000000
+create vertex 4.895830 5.010100 0.000000
+create curve vertex 95 96
+create vertex 4.895830 5.010100 0.000000
+create vertex 5.000000 5.010100 0.000000
+create curve vertex 97 98
+create vertex 5.000000 5.010100 0.000000
+create vertex 5.000000 4.801760 0.000000
+create curve vertex 99 100
+create vertex 5.000000 4.801760 0.000000
+create vertex 4.895830 4.801760 0.000000
+create curve vertex 101 102
+create vertex 4.895830 4.801760 0.000000
+create vertex 4.895830 4.593430 0.000000
+create curve vertex 103 104
+create vertex 4.895830 4.593430 0.000000
+create vertex 4.687500 4.593430 0.000000
+create curve vertex 105 106
+create vertex 4.687500 4.593430 0.000000
+create vertex 4.687500 4.801760 0.000000
+create curve vertex 107 108
+create vertex 4.687500 4.801760 0.000000
+create vertex 4.270830 4.801760 0.000000
+create curve vertex 109 110
+create vertex 4.270830 4.801760 0.000000
+create vertex 4.270830 5.010100 0.000000
+create curve vertex 111 112
+create vertex 4.270830 5.010100 0.000000
+create vertex 4.687500 5.635100 0.000000
+create curve vertex 113 114
+create vertex 4.479170 5.010100 0.000000
+create vertex 4.687500 5.010100 0.000000
+create curve vertex 115 116
+create vertex 4.687500 5.010100 0.000000
+create vertex 4.687500 5.322600 0.000000
+create curve vertex 117 118
+create vertex 4.687500 5.322600 0.000000
+create vertex 4.479170 5.010100 0.000000
+create curve vertex 119 120
+create vertex 5.625000 4.593370 0.000000
+create vertex 5.625000 5.635040 0.000000
+create curve vertex 121 122
+create vertex 5.625000 5.635040 0.000000
+create vertex 5.416670 5.635040 0.000000
+create curve vertex 123 124
+create vertex 5.416670 5.635040 0.000000
+create vertex 5.208330 5.426710 0.000000
+create curve vertex 125 126
+create vertex 5.625000 4.593370 0.000000
+create vertex 5.416670 4.593370 0.000000
+create curve vertex 127 128
+create vertex 5.416670 4.593370 0.000000
+create vertex 5.416670 5.426710 0.000000
+create curve vertex 129 130
+create vertex 5.416670 5.426710 0.000000
+create vertex 5.208330 5.218370 0.000000
+create curve vertex 131 132
+create vertex 5.208330 5.218370 0.000000
+create vertex 5.208330 5.426710 0.000000
+create curve vertex 133 134
+create vertex 5.833330 5.010040 0.000000
+create vertex 5.833330 5.218370 0.000000
+create curve vertex 135 136
+create vertex 5.833330 5.218370 0.000000
+create vertex 6.458330 5.218370 0.000000
+create curve vertex 137 138
+create vertex 6.458330 5.218370 0.000000
+create vertex 6.458330 5.010040 0.000000
+create curve vertex 139 140
+create vertex 6.458330 5.010040 0.000000
+create vertex 5.833330 5.010040 0.000000
+create curve vertex 141 142
+create vertex 6.666670 5.635040 0.000000
+create vertex 7.500000 5.635040 0.000000
+create curve vertex 143 144
+create vertex 7.500000 5.635040 0.000000
+create vertex 7.500000 5.426710 0.000000
+create curve vertex 145 146
+create vertex 7.500000 5.426710 0.000000
+create vertex 7.187500 5.426710 0.000000
+create curve vertex 147 148
+create vertex 7.187500 5.426710 0.000000
+create vertex 7.187500 4.593370 0.000000
+create curve vertex 149 150
+create vertex 7.187500 4.593370 0.000000
+create vertex 6.979170 4.593370 0.000000
+create curve vertex 151 152
+create vertex 6.979170 4.593370 0.000000
+create vertex 6.979170 5.426710 0.000000
+create curve vertex 153 154
+create vertex 6.979170 5.426710 0.000000
+create vertex 6.666670 5.426710 0.000000
+create curve vertex 155 156
+create vertex 6.666670 5.426710 0.000000
+create vertex 6.666670 5.635040 0.000000
+create curve vertex 157 158
+create vertex 7.708330 5.635040 0.000000
+create vertex 7.708330 4.593370 0.000000
+create curve vertex 159 160
+create vertex 7.708330 5.635040 0.000000
+create vertex 8.541670 5.635040 0.000000
+create curve vertex 161 162
+create vertex 7.916670 5.218370 0.000000
+create vertex 8.333330 5.218370 0.000000
+create curve vertex 163 164
+create vertex 7.916670 5.426710 0.000000
+create vertex 8.333330 5.426710 0.000000
+create curve vertex 165 166
+create vertex 8.333330 5.426710 0.000000
+create vertex 8.333330 5.218370 0.000000
+create curve vertex 167 168
+create vertex 7.916670 5.218370 0.000000
+create vertex 7.916670 5.426710 0.000000
+create curve vertex 169 170
+create vertex 7.916670 5.010040 0.000000
+create vertex 7.916670 4.593370 0.000000
+create curve vertex 171 172
+create vertex 7.916670 4.593370 0.000000
+create vertex 7.708330 4.593370 0.000000
+create curve vertex 173 174
+create vertex 8.541670 5.635040 0.000000
+create vertex 8.541670 5.010040 0.000000
+create curve vertex 175 176
+create vertex 8.333330 5.010040 0.000000
+create vertex 8.645830 4.593370 0.000000
+create curve vertex 177 178
+create vertex 8.437500 4.593370 0.000000
+create vertex 8.125000 5.010040 0.000000
+create curve vertex 179 180
+create vertex 8.125000 5.010040 0.000000
+create vertex 7.916670 5.010040 0.000000
+create curve vertex 181 182
+create vertex 8.333330 5.010040 0.000000
+create vertex 8.541670 5.010040 0.000000
+create curve vertex 183 184
+create vertex 8.437500 4.593370 0.000000
+create vertex 8.645830 4.593370 0.000000
+create curve vertex 185 186
+create vertex 8.854220 5.635100 0.000000
+create vertex 8.854220 4.593430 0.000000
+create curve vertex 187 188
+create vertex 8.854220 4.593430 0.000000
+create vertex 9.687560 4.593430 0.000000
+create curve vertex 189 190
+create vertex 9.687560 4.593430 0.000000
+create vertex 9.687560 5.635100 0.000000
+create curve vertex 191 192
+create vertex 9.687560 5.635100 0.000000
+create vertex 8.854220 5.635100 0.000000
+create curve vertex 193 194
+create vertex 9.062560 4.801760 0.000000
+create vertex 9.479220 4.801760 0.000000
+create curve vertex 195 196
+create vertex 9.479220 4.801760 0.000000
+create vertex 9.479220 5.426760 0.000000
+create curve vertex 197 198
+create vertex 9.479220 5.426760 0.000000
+create vertex 9.062560 5.426760 0.000000
+create curve vertex 199 200
+create vertex 9.062560 5.426760 0.000000
+create vertex 9.062560 4.801760 0.000000
+create curve vertex 201 202
+create vertex 9.895830 5.635040 0.000000
+create vertex 9.895830 4.593370 0.000000
+create curve vertex 203 204
+create vertex 9.895830 4.593370 0.000000
+create vertex 10.104200 4.593370 0.000000
+create curve vertex 205 206
+create vertex 10.416700 4.593370 0.000000
+create vertex 10.625000 4.593370 0.000000
+create curve vertex 207 208
+create vertex 10.937500 4.593370 0.000000
+create vertex 11.145800 4.593370 0.000000
+create curve vertex 209 210
+create vertex 11.145800 4.593370 0.000000
+create vertex 11.145800 5.635040 0.000000
+create curve vertex 211 212
+create vertex 11.145800 5.635040 0.000000
+create vertex 10.833300 5.635040 0.000000
+create curve vertex 213 214
+create vertex 9.895830 5.635040 0.000000
+create vertex 10.208300 5.635040 0.000000
+create curve vertex 215 216
+create vertex 10.937500 5.426710 0.000000
+create vertex 10.625000 4.593370 0.000000
+create curve vertex 217 218
+create vertex 10.416700 4.593370 0.000000
+create vertex 10.104200 5.426710 0.000000
+create curve vertex 219 220
+create vertex 10.104200 5.426710 0.000000
+create vertex 10.104200 4.593370 0.000000
+create curve vertex 221 222
+create vertex 10.937500 5.426710 0.000000
+create vertex 10.937500 4.593370 0.000000
+create curve vertex 223 224
+create vertex 10.520800 4.801710 0.000000
+create vertex 10.833300 5.635040 0.000000
+create curve vertex 225 226
+create vertex 10.520800 4.801710 0.000000
+create vertex 10.208300 5.635040 0.000000
+create curve vertex 227 228
+create vertex 11.354200 5.635040 0.000000
+create vertex 11.354200 4.593370 0.000000
+create curve vertex 229 230
+create vertex 11.354200 4.593370 0.000000
+create vertex 11.562500 4.593370 0.000000
+create curve vertex 231 232
+create vertex 11.354200 5.635040 0.000000
+create vertex 12.187500 5.635040 0.000000
+create curve vertex 233 234
+create vertex 12.187500 5.010040 0.000000
+create vertex 11.562500 5.010040 0.000000
+create curve vertex 235 236
+create vertex 11.562500 5.010040 0.000000
+create vertex 11.562500 4.593370 0.000000
+create curve vertex 237 238
+create vertex 11.562500 5.426710 0.000000
+create vertex 11.979200 5.426710 0.000000
+create curve vertex 239 240
+create vertex 11.979200 5.218370 0.000000
+create vertex 11.562500 5.218370 0.000000
+create curve vertex 241 242
+create vertex 11.562500 5.218370 0.000000
+create vertex 11.562500 5.426710 0.000000
+create curve vertex 243 244
+create curve vertex 235 234  
+create curve vertex 241 240
+
+# Merge all entities if ducplicates and reindex
+merge all
+compress all
+
+pause
+
+# Create surfaces
+create surface curve 6 2 1 8 10 12 7 9 11 5 4 3  
+create surface curve 15 22 16 18 23 19 17 24 21 20 13 14  
+create surface curve 32 28 29 30 31 27 25 26  
+create surface curve 39 37 44 45 36 38 41 43 46 42 34 35 33 40  
+create surface curve 55 56 57 54 58 59 48 51 60 47 50 53 49 52  
+create surface curve 61 62 67 63 64 65 66  
+create surface curve 69 68 71 70  
+create surface curve 76 72 75 78 74 77 79 73  
+create surface curve 85 90 93 81 91 80 84 87 89 88 86 83 92 82  
+create surface curve 96 101 94 99 97 98 95 100  
+create surface curve 102 106 114 107 103 105 104 113 108 109 112 110 111  
+create surface curve 120 124 116 115 118 119 121 117 123 122  
+
+pause
+
+# Create vertices, line segments and surface for the bounding box
+create vertex -1.791667 2.59337 0
+create vertex -1.791667 7.63504 0
+create vertex 14.187500 7.63504 0
+create vertex 14.1875 2.59337 0
+create curve vertex 127 126  
+create curve vertex 126 125  
+create curve vertex 125 128  
+create curve vertex 128 127  
+create surface curve 125 126 127 128  
+
+pause
+
+# Reset origin to (0, 0, 0)
+move Surface all x 1.791667 y -2.59337 z 0 include_merged 
+
+pause
+
+# Subtract surfaces and keep only the required surfaces
+subtract surface 1 to 12 from surface 13  keep_tool 
+merge all
+compress all
+
+# Imprint all entities for conforming mesh
+imprint all
+merge all
+
+pause
+
+# Mesh the model
+surface all size 0.1
+surface all scheme pave
+mesh surface all
+
+pause
+
+# Refine mesh
+refine surface all numsplit 1 bias 1.0 depth 1 
+
+# Smooth mesh
+surface all smooth scheme condition number beta 2.0 cpu 10
+smooth surface all
+merge all
+compress all
+
+pause
+
+
+# Define blocks
+set duplicate block elements off
+undo group begin
+block 1 add surface 13 
+block 1 name "Elastic1"
+undo group end
+set duplicate block elements off
+undo group begin
+block 2 add surface 1 2 3 4 5 6 7 8 9 10 11 12 
+block 2 name "Elastic2"
+undo group end
+set duplicate block elements off
+undo group begin
+block 3 add surface 19 18 17 16 15 14 
+block 3 name "Acoustic"
+undo group end
+
+# Assign element types
+block all element type quad4
+pause
+
+# Define sidesets for boundary conditions
+undo group begin
+sideset 1 add curve 125  
+sideset 1 name "Free_surface"
+undo group end
+undo group begin
+sideset 2 add curve 128 127 126  
+sideset 2 name "Absorbing_surface"
+undo group end
+
+pause
+
+# Save Trelis file
+save trelis "C:/Users/homna/GEO441/FinalProject/mesh/GEO441TROMP.trelis" overwrite journal
+
+# Export to Exodus .e file
+undo group begin
+set exodus netcdf4 off
+set large exodus file on
+export mesh "C:/Users/homna/GEO441/FinalProject/mesh/GEO441TROMP.e"  dimension 3  overwrite 
+undo group end
+
+
+
