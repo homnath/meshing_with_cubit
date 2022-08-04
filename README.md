@@ -1,5 +1,5 @@
-# meshing_with_trelis
-This is a tutorial on how to mesh 3D models for SPECFEM3D using Trelis/Cubit.
+# meshing_with_cubit
+This is a tutorial on how to mesh 3D models for SPECFEM3D using Cubit.
 # Developer
 Hom Nath Gharti
 
