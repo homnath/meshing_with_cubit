@@ -1,14 +1,18 @@
-#!python
-#-----------------------------------------------
-#Hom Nath Gharti, Princeton University
-#March 13, 2016. Tested with Trelis 15.2
-#Laboratory scale cylindrical sample
-#-----------------------------------------------
-cubit.cmd('reset')
-cubit.cmd('set node constraint on')
-cubit.cmd('create Cylinder height 127 radius 25.4 ')
-cubit.cmd('create Cylinder height 60 radius 2.6 ')
-cubit.cmd('rotate Volume 2 angle 90  about X include_merged ')
-cubit.cmd('subtract body 2 from body 1 ')
-cubit.cmd('compress all')
-cubit.cmd('save as "cylinder.cub" overwrite journal ')
+#-------------------------------------------------------------------------------
+# Laboratory scale cylindrical sample
+#-------------------------------------------------------------------------------
+# AUTHOR:
+#   Hom Nath Gharti, Princeton University (2016)
+#   Hom Nath Gharti, Queen's University (2022-)
+# HISTORY:
+#   March  13, 2016: First created. Tested with Trelis 15.2
+#   August 05, 2022: Updated. Tested with Coreform Cubit 2022.6
+#-------------------------------------------------------------------------------
+reset
+set node constraint on
+create Cylinder height 127 radius 25.4 
+create Cylinder height 60 radius 2.6 
+rotate Volume 2 angle 90  about X include_merged 
+subtract body 2 from body 1 
+compress all
+save cub5 "cylinder.cub5" overwrite journal 

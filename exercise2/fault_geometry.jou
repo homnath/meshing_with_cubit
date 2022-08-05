@@ -1,20 +1,24 @@
-#!python
-#-----------------------------------------------
-#Hom Nath Gharti, Princeton University
-#March 13, 2016. Tested with Trelis 15.2
-#Finie fault model
-#-----------------------------------------------
-cubit.cmd('reset')
-cubit.cmd('set node constraint on')
-cubit.cmd('brick x 200 y 160 z 100')
-cubit.cmd('move Volume 1 preview x 0 y 0 z -50 include_merged ')
-cubit.cmd('move Volume 1 x 0 y 0 z -50 include_merged ')
-cubit.cmd('webcut body 1  with plane zplane offset -60 ')
-cubit.cmd('create surface rectangle width 40 height 20 zplane ')
-cubit.cmd('move Surface 17  x 0 y 0 z -30 include_merged ')
-cubit.cmd('rotate Surface 17 angle 10  about Y include_merged ')
-cubit.cmd('compress all')
-cubit.cmd('subtract body 3  from body 1  ')
-cubit.cmd('compress all')
-cubit.cmd('save as "fault_geometry.cub" overwrite journal ')
+#-------------------------------------------------------------------------------
+# Finie fault model
+#-------------------------------------------------------------------------------
+# AUTHOR:
+#   Hom Nath Gharti, Princeton University (2016)
+#   Hom Nath Gharti, Queen's University (2022-)
+# HISTORY:
+#   March  13, 2016: First created. Tested with Trelis 15.2
+#   August 05, 2022: Updated. Tested with Coreform Cubit 2022.6
+#-------------------------------------------------------------------------------
+reset
+set node constraint on
+brick x 200 y 160 z 100
+move Volume 1 preview x 0 y 0 z -50 include_merged 
+move Volume 1 x 0 y 0 z -50 include_merged 
+webcut body 1  with plane zplane offset -60 
+create surface rectangle width 40 height 20 zplane 
+move Surface 17  x 0 y 0 z -30 include_merged 
+rotate Surface 17 angle 10  about Y include_merged 
+compress all
+subtract body 3  from body 1  
+compress all
+save cub5 "fault_geometry.cub5" overwrite journal 
 

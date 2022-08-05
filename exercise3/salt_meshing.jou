@@ -1,104 +1,108 @@
-#!python
-#-----------------------------------------------
-#Hom Nath Gharti, Princeton University
-#March 13, 2016. Tested with Trelis 15.2
-#Salt model
-#-----------------------------------------------
-cubit.cmd('reset')
-cubit.cmd('set node constraint on')
-cubit.cmd('create surface ellipse major radius 300 minor radius 200 zplane ')
-cubit.cmd('webcut body 1 with plane yplane offset 0 ')
-cubit.cmd('sweep curve 5  xaxis angle 360 make_solid ')
-cubit.cmd('delete Body 1 2')
-cubit.cmd('compress all')
-cubit.cmd('brick x 1000 y 800 z 600')
-cubit.cmd('rotate Volume 1 angle 10 preview  about Y ')
-cubit.cmd('rotate Volume 1 angle 10  about Y ')
-cubit.cmd('subtract body 1 from body 2 keep ')
-cubit.cmd('delete Volume 2')
-cubit.cmd('compress all')
-cubit.cmd('save as "salt_geometry.cub" overwrite journal ')
+#-------------------------------------------------------------------------------
+# Salt model
+#-------------------------------------------------------------------------------
+# AUTHOR:
+#   Hom Nath Gharti, Princeton University (2016)
+#   Hom Nath Gharti, Queen's University (2022-)
+# HISTORY:
+#   March  13, 2016: First created. Tested with Trelis 15.2
+#   August 05, 2022: Updated. Tested with Coreform Cubit 2022.6
+#-------------------------------------------------------------------------------
+reset
+set node constraint on
+create surface ellipse major radius 300 minor radius 200 zplane 
+webcut body 1 with plane yplane offset 0 
+sweep curve 5  xaxis angle 360 make_solid 
+delete Body 1 2
+compress all
+brick x 1000 y 800 z 600
+rotate Volume 1 angle 10 preview  about Y 
+rotate Volume 1 angle 10  about Y 
+subtract body 1 from body 2 keep 
+delete Volume 2
+compress all
+save cub5 "salt_geometry.cub5" overwrite journal 
 
-cubit.cmd('pause')
+pause
 
-cubit.cmd('webcut body all with plane zplane offset 0 rotate 10 about y center 0 0 0  ')
-cubit.cmd('webcut body all with plane xplane offset 0 rotate 10 about y center 0 0 0  ')
-cubit.cmd('webcut body all with plane yplane offset 0 rotate 0 about y center 0 0 0  ')
-cubit.cmd('compress all')
-cubit.cmd('imprint all')
-cubit.cmd('merge all')
+webcut body all with plane zplane offset 0 rotate 10 about y center 0 0 0  
+webcut body all with plane xplane offset 0 rotate 10 about y center 0 0 0  
+webcut body all with plane yplane offset 0 rotate 0 about y center 0 0 0  
+compress all
+imprint all
+merge all
 
-cubit.cmd('pause')
+pause
 
-cubit.cmd('volume all size 20')
-cubit.cmd('volume 5 13 9 1 7 3 11 15  scheme TetPrimitive ')
-cubit.cmd('mesh volume 5 13 9 1 7 3 11 15 ')
+volume all size 20
+volume 5 13 9 1 7 3 11 15  scheme TetPrimitive 
+mesh volume 5 13 9 1 7 3 11 15 
 
-cubit.cmd('pause')
+pause
 
-cubit.cmd('surface 66 24 61 22  size 20')
-cubit.cmd('surface 66 24 61 22 scheme pave')
-cubit.cmd('mesh surface 66 24 61 22')
+surface 66 24 61 22  size 20
+surface 66 24 61 22 scheme pave
+mesh surface 66 24 61 22
 
-cubit.cmd('pause')
+pause
 
-cubit.cmd('volume 4 redistribute nodes off ')
-cubit.cmd('volume 4 scheme Sweep  source surface 32 22    target surface 42   sweep transform least squares ')
-cubit.cmd('volume 4 autosmooth target off ')
-cubit.cmd('mesh volume 4')
-cubit.cmd('volume 12  redistribute nodes off ')
-cubit.cmd('volume 12  scheme Sweep  source surface 34 24    target surface 45   sweep transform least squares ')
-cubit.cmd('volume 12  autosmooth target off ')
-cubit.cmd('mesh volume 12 ')
-cubit.cmd('volume 16  redistribute nodes off ')
-cubit.cmd('volume 16  scheme Sweep  source surface 76 66    target surface 84   sweep transform least squares ')
-cubit.cmd('volume 16  autosmooth target off ')
-cubit.cmd('mesh volume 16 ')
-cubit.cmd('volume 8  redistribute nodes off ')
-cubit.cmd('volume 8  scheme Sweep  source surface 70 61    target surface 80   sweep transform least squares ')
-cubit.cmd('volume 8  autosmooth target off ')
-cubit.cmd('mesh volume 8 ')
+volume 4 redistribute nodes off 
+volume 4 scheme Sweep  source surface 32 22    target surface 42   sweep transform least squares 
+volume 4 autosmooth target off 
+mesh volume 4
+volume 12  redistribute nodes off 
+volume 12  scheme Sweep  source surface 34 24    target surface 45   sweep transform least squares 
+volume 12  autosmooth target off 
+mesh volume 12 
+volume 16  redistribute nodes off 
+volume 16  scheme Sweep  source surface 76 66    target surface 84   sweep transform least squares 
+volume 16  autosmooth target off 
+mesh volume 16 
+volume 8  redistribute nodes off 
+volume 8  scheme Sweep  source surface 70 61    target surface 80   sweep transform least squares 
+volume 8  autosmooth target off 
+mesh volume 8 
 
-cubit.cmd('volume 10  redistribute nodes off ')
-cubit.cmd('volume 10  scheme Sweep  source surface 16 24    target surface 27   sweep transform least squares ')
-cubit.cmd('volume 10  autosmooth target off ')
-cubit.cmd('mesh volume 10 ')
-cubit.cmd('volume 14  redistribute nodes off ')
-cubit.cmd('volume 14  scheme Sweep  source surface 66 54    target surface 67   sweep transform least squares ')
-cubit.cmd('volume 14  autosmooth target off ')
-cubit.cmd('mesh volume 14 ')
-cubit.cmd('volume 6  redistribute nodes off ')
-cubit.cmd('volume 6  scheme Sweep  source surface 52 61    target surface 58   sweep transform least squares ')
-cubit.cmd('volume 6  autosmooth target off ')
-cubit.cmd('mesh volume 6 ')
-cubit.cmd('volume 2  redistribute nodes off ')
-cubit.cmd('volume 2  scheme Sweep  source surface 10 22    target surface 19   sweep transform least squares ')
-cubit.cmd('volume 2  autosmooth target off ')
-cubit.cmd('mesh volume 2 ')
-cubit.cmd('merge all')
-cubit.cmd('compress all')
+volume 10  redistribute nodes off 
+volume 10  scheme Sweep  source surface 16 24    target surface 27   sweep transform least squares 
+volume 10  autosmooth target off 
+mesh volume 10 
+volume 14  redistribute nodes off 
+volume 14  scheme Sweep  source surface 66 54    target surface 67   sweep transform least squares 
+volume 14  autosmooth target off 
+mesh volume 14 
+volume 6  redistribute nodes off 
+volume 6  scheme Sweep  source surface 52 61    target surface 58   sweep transform least squares 
+volume 6  autosmooth target off 
+mesh volume 6 
+volume 2  redistribute nodes off 
+volume 2  scheme Sweep  source surface 10 22    target surface 19   sweep transform least squares 
+volume 2  autosmooth target off 
+mesh volume 2 
+merge all
+compress all
 
-cubit.cmd('pause')
+pause
 
-cubit.cmd('set duplicate block elements off')
-cubit.cmd('block 1 add volume 7 3 11 15 5 13 9 1  ')
-cubit.cmd('volume all visibility on')
-cubit.cmd('set duplicate block elements off')
-cubit.cmd('block 2 add volume 6 14 10 2 8 4 16 12  ')
+set duplicate block elements off
+block 1 add volume 7 3 11 15 5 13 9 1  
+volume all visibility on
+set duplicate block elements off
+block 2 add volume 6 14 10 2 8 4 16 12  
 
-cubit.cmd('Sideset 1 add surface 47 23 43 18  ')
-cubit.cmd('sideset 1 name \'absorbing_surface_file_zmax\'')
-cubit.cmd('Sideset 2  add surface 53 33 55 35  ')
-cubit.cmd('sideset 2 name \'absorbing_surface_file_zmin\'')
-cubit.cmd('Sideset 3 add surface 56 48 44 54  ')
-cubit.cmd('sideset 3 name \'absorbing_surface_file_xmin\'')
-cubit.cmd('Sideset 4 add surface 17 24 32 34  ')
-cubit.cmd('sideset 4 name \'absorbing_surface_file_xmax\'')
-cubit.cmd('Sideset 5 add surface 7 4 1 6  ')
-cubit.cmd('sideset 5 name \'absorbing_surface_file_ymin\'')
-cubit.cmd('Sideset 6 add surface 2 3 8 5  ')
-cubit.cmd('sideset 6 name \'absorbing_surface_file_ymax\'')
-cubit.cmd('compress all')
-cubit.cmd('save as "salt_mesh.cub" overwrite journal ')
-cubit.cmd('set large exodus file on')
-cubit.cmd('export mesh "salt_mesh.e" dimension 3 overwrite ')
+Sideset 1 add surface 47 23 43 18  
+sideset 1 name "absorbing_surface_file_zmax"
+Sideset 2  add surface 53 33 55 35  
+sideset 2 name "absorbing_surface_file_zmin"
+Sideset 3 add surface 56 48 44 54  
+sideset 3 name "absorbing_surface_file_xmin"
+Sideset 4 add surface 17 24 32 34  
+sideset 4 name "absorbing_surface_file_xmax"
+Sideset 5 add surface 7 4 1 6  
+sideset 5 name "absorbing_surface_file_ymin"
+Sideset 6 add surface 2 3 8 5  
+sideset 6 name "absorbing_surface_file_ymax"
+compress all
+save cub5 "salt_mesh.cub5" overwrite journal 
+set large exodus file on
+export mesh "salt_mesh.e" dimension 3 overwrite 

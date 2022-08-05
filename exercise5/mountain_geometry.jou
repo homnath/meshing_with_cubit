@@ -1,13 +1,17 @@
-#!python
-#-----------------------------------------------
-#Hom Nath Gharti, Princeton University
-#March 13, 2016. Tested with Trelis 15.2
-#Mountain model
-#-----------------------------------------------
-cubit.cmd('reset')
-cubit.cmd('set node constraint on')
-cubit.cmd('import stl "mountain_topography.stl" merge stitch ')
-cubit.cmd('import stl "mountain_interface.stl" merge stitch ')
-cubit.cmd('compress all')
-cubit.cmd('save as "mountain_geometry.cub" overwrite journal ')
+#-------------------------------------------------------------------------------
+# Mountain model
+#-------------------------------------------------------------------------------
+# AUTHOR:
+#   Hom Nath Gharti, Princeton University (2016)
+#   Hom Nath Gharti, Queen's University (2022-)
+# HISTORY:
+#   March  13, 2016: First created. Tested with Trelis 15.2
+#   August 05, 2022: Updated. Tested with Coreform Cubit 2022.6
+#-------------------------------------------------------------------------------
+reset
+set node constraint on
+import stl "mountain_topography.stl" merge stitch 
+import stl "mountain_interface.stl" merge stitch 
+compress all
+save cub5 "mountain_geometry.cub5" overwrite journal 
 

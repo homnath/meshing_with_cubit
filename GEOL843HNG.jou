@@ -1,3 +1,9 @@
+# This journal script generates the mesh for the GEOL843HNG model literally.
+# Written by Hom Nath Gharti
+# April 10, 2022
+#===============================================
+# Reset everything on current window
+reset
 create vertex 8.960550 15.918600 0.000000
 create vertex 2.986850 15.918600 0.000000
 create curve vertex 1 2
@@ -406,8 +412,9 @@ undo group begin
 sideset 2 add curve 119 116 117  
 sideset 2 name "Absorbing_Surface"
 undo group end
-save cub5 "C:/Users/homna/lecture/COMPGEO/FinalProject/mesh/GEOL843HNG.cub5" overwrite journal
+save cub5 "GEOL843HNG.cub5" overwrite journal
 
 # Sweep
 sweep surface all vector 0 0 1  distance 10  include_mesh  keep
+
 

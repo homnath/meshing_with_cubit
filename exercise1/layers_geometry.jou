@@ -1,14 +1,18 @@
-#!python
-#-----------------------------------------------
-#Hom Nath Gharti, Princeton University
-#March 13, 2016. Tested with Trelis 15.2
-#Three layered model
-#-----------------------------------------------
-cubit.cmd('reset')
-cubit.cmd('set node constraint on')
-cubit.cmd('brick x 200 y 160 z 100')
-cubit.cmd('move Volume 1 x 0 y 0 z -50 include_merged ')
-cubit.cmd('webcut body all with plane zplane offset -70 ')
-cubit.cmd('webcut body all with plane zplane offset -40 ')
-cubit.cmd('save as "layers_geometry.cub" overwrite journal ')
+#-------------------------------------------------------------------------------
+# Three layered model
+#-------------------------------------------------------------------------------
+# AUTHOR:
+#   Hom Nath Gharti, Princeton University (2016)
+#   Hom Nath Gharti, Queen's University (2022-)
+# HISTORY:
+#   March  13, 2016: First created. Tested with Trelis 15.2
+#   August 05, 2022: Updated. Tested with Coreform Cubit 2022.6
+#-------------------------------------------------------------------------------
+reset
+set node constraint on
+brick x 200 y 160 z 100
+move Volume 1 x 0 y 0 z -50 include_merged 
+webcut body all with plane zplane offset -70 
+webcut body all with plane zplane offset -40 
+save cub5 "layers_geometry.cub5" overwrite journal 
 

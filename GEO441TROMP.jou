@@ -478,15 +478,16 @@ undo group end
 
 pause
 
-# Save Trelis file
-save trelis "C:/Users/homna/GEO441/FinalProject/mesh/GEO441TROMP.trelis" overwrite journal
+# Save Cubit file
+save cub5 "GEO441TROMP.cub5" overwrite journal
 
 # Export to Exodus .e file
 undo group begin
 set exodus netcdf4 off
 set large exodus file on
-export mesh "C:/Users/homna/GEO441/FinalProject/mesh/GEO441TROMP.e"  dimension 3  overwrite 
+export mesh "GEO441TROMP.e"  dimension 3  overwrite 
 undo group end
+
 
 
 
